@@ -108,7 +108,7 @@ extension Date {
     formatter.locale = .current
     formatter.timeStyle = .medium
     formatter.dateStyle = .medium
-    formatter.timeZone = .init(secondsFromGMT: 0)
+    //formatter.timeZone = .init(secondsFromGMT: 0)
     return formatter.string(from: self) + " (UTC)"
   }
 }
