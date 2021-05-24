@@ -64,11 +64,11 @@ public struct CBOR {
   public static func kid(from data: Data) -> [UInt8]? {
     let cosePhdrKid = SwiftCBOR.CBOR.unsignedInt(4)
 
-    let unwrap = unwrap(data: data)
+    let unwrapValue = unwrap(data: data)
     guard
-      let protected = unwrap?.protected,
+      let protected = unwrapValue?.protected,
       case let SwiftCBOR.CBOR.map(protectedMap) = protected,
-      let unprotected = unwrap?.unprotected
+      let unprotected = unwrapValue?.unprotected
     else {
       return nil
     }
